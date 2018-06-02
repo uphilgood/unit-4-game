@@ -108,7 +108,7 @@
     </div>
 
     <div>
-            <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-danger">Danger</button>
     </div>
 
 
@@ -117,21 +117,21 @@
 
             var yourFighter = {
                 name: [],
-                points: 0,
-                hitPoints: 0,
-                minusPoints: 0,
+                healthPoints: 0,
+                attackPower: 0,
                 id: ''
             }
 
             var enemy = {
                 name: [],
-                points: 0,
-                hitPoints: 0,
-                minusPoints: 0,
+                healthPoints: 0,
+                counterAttackPower: 0,
                 id: ''
             }
-
-            var fighterChosen = false;
+            var enemiesArray = ["enemy-1", "enemy-2", "enemy-3", "enemy-4"]
+            var enemiesLeft = [];
+            var newEnemyArray = []
+            var newEnemyString = ""
 
             function initialize() {
 
@@ -142,72 +142,109 @@
 
             initialize();
 
-            
+
             $('.card').click(function () {
                 alert(this.id);
                 if (this.id == "fighter-1") {
                     yourFighter.name = "Obi";
                     yourFighter.id = this.id;
+                    yourFighter.healthPoints = 200;
+                    yourFighter.attackPower = 18;
                     $("#fighter-2,#fighter-3,#fighter-4").hide();
                     $("#enemy-2,#enemy-3,#enemy-4").show();
+
 
                 } else if (this.id == "fighter-2") {
                     yourFighter.name = "Darth Maul"
                     yourFighter.id = this.id
+                    yourFighter.healthPoints = 175;
+                    yourFighter.attackPower = 24;
                     $("#fighter-1,#fighter-3,#fighter-4").hide();
                     $("#enemy-1,#enemy-3,#enemy-4").show();
                 } else if (this.id == "fighter-3") {
                     yourFighter.name = "Han Solo"
                     yourFighter.id = this.id
+                    yourFighter.healthPoints = 300;
+                    yourFighter.attackPower = 20;
                     $("#fighter-1,#fighter-2,#fighter-4").hide();
                     $("#enemy-1,#enemy-2,#enemy-4").show();
                 } else if (this.id == "fighter-4") {
                     yourFighter.name = "Darth Vadar"
                     yourFighter.id = this.id
+                    yourFighter.healthPoints = 325;
+                    yourFighter.attackPower = 24;
                     $("#fighter-1,#fighter-2,#fighter-3").hide();
                     $("#enemy-1,#enemy-2,#enemy-3").show();
                 }
 
-                console.log(yourFighter.name)
-                console.log(yourFighter.id)
+                console.log(yourFighter)
+                console.log(enemiesLeft)
 
-            }).click( function () {
+            }).click(function () {
 
                 if (yourFighter.name && this.id == "enemy-1") {
-                enemy.name = "Obi"
-                enemy.id = this.id
-                $("#enemy-2,#enemy-3,#enemy-4").hide();
-                $(".btn-danger").show();
-                console.log(enemy.name)
-                console.log(enemy.id)
+                    enemy.name = "Obi"
+                    enemy.id = this.id
+                    enemy.healthPoints = 200;
+                    enemy.counterAttackPower = 16;
+                    $("#enemy-2,#enemy-3,#enemy-4").hide();
+                    enemiesLeft = enemiesArray.filter(word => word != this.id);
+                    console.log(enemiesLeft)
+                    $(".btn-danger").show();
+                } else if (yourFighter.name && this.id == "enemy-2") {
+                    enemy.name = "Darth Maul"
+                    enemy.id = this.id
+                    enemy.healthPoints = 175;
+                    enemy.counterAttackPower = 20;
+                    $("#enemy-1,#enemy-3,#enemy-4").hide();
+                    enemiesLeft = enemiesArray.filter(word => word != this.id);
+                    console.log(enemiesLeft)
+                    $(".btn-danger").show();
+                } else if (yourFighter.name && this.id == "enemy-3") {
+                    enemy.name = "Han Solo"
+                    enemy.id = this.id
+                    enemy.healthPoints = 300;
+                    enemy.counterAttackPower = 25;
+                    $("#enemy-1,#enemy-2,#enemy-4").hide();
+                    enemiesLeft = enemiesArray.filter(word => word != this.id);
+                    console.log(enemiesLeft)
+                    $(".btn-danger").show();
+                } else if (yourFighter.name && this.id == "enemy-4") {
+                    enemy.name = "Darth Vadar"
+                    enemy.id = this.id
+                    enemy.healthPoints = 275;
+                    enemy.counterAttackPower = 18;
+                    $("#enemy-1,#enemy-2,#enemy-3").hide();
+                    enemiesLeft = enemiesArray.filter(word => word != this.id);
+                    console.log(enemiesLeft)
+                    $(".btn-danger").show();
                 }
+                console.log(enemy)
+            });
 
-                else if (yourFighter.name && this.id == "enemy-2") {
-                enemy.name = "Darth Maul"
-                enemy.id = this.id
-                $("#enemy-1,#enemy-3,#enemy-4").hide();
-                $(".btn-danger").show();
-                console.log(enemy.name)
-                console.log(enemy.id)
-                }
+            function attack() {
+                yourFighter.healthPoints -= enemy.counterAttackPower
+                enemy.healthPoints -= yourFighter.attackPower
+                yourFighter.attackPower += 6
+                if (yourFighter.healthPoints <= 0) {
+                    alert("you lose, game over")
+                } if (enemy.healthPoints <= 0) {
+                    enemiesLeft.forEach(function (e){
+                        newEnemyArray.push("#" + e)
+                    })
 
-                else if (yourFighter.name && this.id == "enemy-3") {
-                enemy.name = "Han Solo"
-                enemy.id = this.id
-                $("#enemy-1,#enemy-2,#enemy-4").hide();
-                $(".btn-danger").show();
-                console.log(enemy.name)
-                console.log(enemy.id)
+                    newEnemyString = newEnemyArray.toString()
+                    
+                    $(newEnemyString).show()
+                    $("#"+enemy.id).hide()
                 }
+                console.log(yourFighter)
+                console.log(enemy)
+                console.log(newEnemyString)
+            }
 
-                else if (yourFighter.name && this.id == "enemy-4") {
-                enemy.name = "Darth Vadar"
-                enemy.id = this.id
-                $("#enemy-1,#enemy-2,#enemy-3").hide();
-                $(".btn-danger").show();
-                console.log(enemy.name)
-                console.log(enemy.id)
-                }
+            $("button").click(function () {
+                attack();
             });
         })
     </script>
