@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    
     function initialize() {
         yourFighter = {
             name: [],
@@ -24,7 +25,6 @@ $(document).ready(function () {
         $("#enemies1, #enemies2, #enemies3, #enemies4, #chosen, #chooseEnemy, #vs").hide();
         $("#player1points, #player2points, #player3points, #player4points, #enemy1points, #enemy2points, #enemy3points, #enemy4points").hide();
         $(".btn-danger").hide();
-        
     }
 
     initialize();
@@ -90,8 +90,6 @@ $(document).ready(function () {
             enemy.counterAttackPower = 16;
             enemy.viewPoints = 'enemy1points'
             $("#enemies2,#enemies3,#enemies4, #chooseEnemy").hide();
-            // enemiesLeft = enemiesArray.filter(word => word != this.id);
-            // console.log(enemiesLeft)
             $(".btn-danger, #vs").show();
 
         } else if (yourFighter.name && this.id == "enemies2") {
@@ -102,8 +100,6 @@ $(document).ready(function () {
             enemy.counterAttackPower = 20;
             enemy.viewPoints = 'enemy2points'
             $("#enemies1,#enemies3,#enemies4, #chooseEnemy").hide();
-            // enemiesLeft = enemiesArray.filter(word => word != this.id);
-            // console.log(enemiesLeft)
             $(".btn-danger, #vs").show();
 
         } else if (yourFighter.name && this.id == "enemies3") {
@@ -113,8 +109,6 @@ $(document).ready(function () {
             enemy.counterAttackPower = 25;
             enemy.viewPoints = 'enemy3points'
             $("#enemies1,#enemies2,#enemies4, #chooseEnemy").hide();
-            // enemiesLeft = enemiesArray.filter(word => word != this.id);
-            // console.log(enemiesLeft)
             $(".btn-danger, #vs").show();
 
         } else if (yourFighter.name && this.id == "enemies4") {
@@ -125,8 +119,6 @@ $(document).ready(function () {
             enemy.counterAttackPower = 18;
             enemy.viewPoints = 'enemy4points'
             $("#enemies1,#enemies2,#enemies3, #chooseEnemy").hide();
-            // enemiesLeft = enemiesArray.filter(word => word != this.id);
-            // console.log(enemiesLeft)
             $(".btn-danger, #vs").show();
 
         }
