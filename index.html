@@ -21,11 +21,11 @@
 
     <div class="container">
             <div id="choose">
-                    <h1  style="text-align: left">Choose Your Fighter!</h1>
+                    <h1  style="text-align: center">Choose Your Fighter!</h1>
                 </div>
 
                 <div id = "chosen">
-                        <h1  style="text-align: left">Your Fighter</h1>
+                        <h1  style="text-align: center">Your Fighter</h1>
                     </div>
 
         <div class="row">
@@ -34,7 +34,7 @@
             <div id="fighter-1" class="card" style="width: 15rem;">
                 <img class="card-img-top" src="./assets/images/obi.jpg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Obi Wan Kenobi</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 
                <div id = "player1points"></div>
@@ -45,7 +45,7 @@
             <div id="fighter-2" class="card" style="width: 15rem;">
                 <img class="card-img-top" src="./assets/images/darth_maul.png" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Darth Maul</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <div id = "player2points"></div>
                 </div>
@@ -54,7 +54,7 @@
             <div id="fighter-3" class="card" style="width: 15rem;">
                 <img class="card-img-top" src="./assets/images/solo.jpg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Han Solo</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <div id = "player3points"></div>
                 </div>
@@ -63,7 +63,7 @@
             <div id="fighter-4" class="card" style="width: 15rem;">
                 <img class="card-img-top" src="./assets/images/darth_vadar.jpg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Darth Vader</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <div id = "player4points"></div>
                 </div>
@@ -71,54 +71,58 @@
             <br/>
         </div>
     </div>
+
+
+    
 </div>
 
-<div id = "chooseEnemy"><h1>Choose your Opponent!</h1></div>
-<div id = "vs"><h1>VS.</h1></div>
+<div id = "chooseEnemy"><h1 style="text-align: center">Choose your Opponent!</h1></div>
+<div id = "vs"><h1 style="text-align: center">VS.</h1></div>
+<div>
+        <button type="button" class="btn btn-danger">Attack!</button>
+    </div>
    
     <div class="jumbotron">
         <div class="container">
-            <div id="enemy-1" class="card" style="width: 15rem;">
+                <div class="row">
+            <div id="enemies1" class="card" style="width: 15rem;">
                 <img class="card-img-top" src="./assets/images/obi.jpg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Obi Wan Kenobi</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <div id = "enemy1points"></div>
                 </div>
             </div>
             <br/>
-            <div id="enemy-2" class="card" style="width: 15rem;">
+            <div id="enemies2" class="card" style="width: 15rem;">
                 <img class="card-img-top" src="./assets/images/darth_maul.png" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Darth Maul</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <div id = "enemy2points"></div>
                 </div>
             </div>
             <br/>
-            <div id="enemy-3" class="card" style="width: 15rem;">
+            <div id="enemies3" class="card" style="width: 15rem;">
                 <img class="card-img-top" src="./assets/images/solo.jpg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Han Solo</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <div id = "enemy3points"></div>
                 </div>
             </div>
             <br/>
-            <div id="enemy-4" class="card" style="width: 15rem;">
+            <div id="enemies4" class="card" style="width: 15rem;">
                 <img class="card-img-top" src="./assets/images/darth_vadar.jpg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Darth Vader</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <div id = "enemy4points"></div>
                 </div>
             </div>
 
+</div>
         </div>
-    </div>
-
-    <div>
-        <button type="button" class="btn btn-danger">Attack!</button>
     </div>
 
 
@@ -141,7 +145,7 @@
                 id: '',
                 viewPoints: ''
             }
-            var enemiesArray = ["enemy-1", "enemy-2", "enemy-3", "enemy-4"]
+            var enemiesArray = ["enemies1", "enemies2", "enemies3", "enemies4"]
             var enemiesLeft = [];
             var newEnemyArray = []
             var newEnemyString = ""
@@ -149,7 +153,7 @@
 
             function initialize() {
 
-                $("#enemy-1, #enemy-2, #enemy-3, #enemy-4, #chosen, #chooseEnemy, #vs").hide();
+                $("#enemies1, #enemies2, #enemies3, #enemies4, #chosen, #chooseEnemy, #vs").hide();
                 $(".btn-danger").hide();
             }
 
@@ -165,10 +169,10 @@
                     yourFighter.id = this.id;
                     yourFighter.healthPoints = 200;
                     yourFighter.attackPower = 18;
-                    yourFighter.enemyId = "enemy-1"
+                    yourFighter.enemyId = "enemies1"
                     yourFighter.viewPoints = 'player1points'
                     $("#fighter-2,#fighter-3,#fighter-4, #choose").hide();
-                    $("#enemy-2,#enemy-3,#enemy-4, #chosen, #chooseEnemy").show();
+                    $("#enemies2, #enemies3, #enemies4, #chosen, #chooseEnemy").show();
                    
 
                 } else if (this.id == "fighter-2") {
@@ -176,30 +180,30 @@
                     yourFighter.id = this.id
                     yourFighter.healthPoints = 175;
                     yourFighter.attackPower = 24;
-                    yourFighter.enemyId = "enemy-2"
+                    yourFighter.enemyId = "enemies2"
                     yourFighter.viewPoints = 'player2points'
                     $("#fighter-1,#fighter-3,#fighter-4, #choose").hide();
-                    $("#enemy-1,#enemy-3,#enemy-4, #chosen, #chooseEnemy").show();
+                    $("#enemies1, #enemies3, #enemies4, #chosen, #chooseEnemy").show();
                     
                 } else if (this.id == "fighter-3") {
                     yourFighter.name = "Han Solo"
                     yourFighter.id = this.id
                     yourFighter.healthPoints = 300;
                     yourFighter.attackPower = 20;
-                    yourFighter.enemyId = "enemy-3"
+                    yourFighter.enemyId = "enemies3"
                     yourFighter.viewPoints = 'player3points'
                     $("#fighter-1,#fighter-2,#fighter-4, #choose").hide();
-                    $("#enemy-1,#enemy-2,#enemy-4, #chosen, #chooseEnemy").show();
+                    $("#enemies1, #enemies2, #enemies4, #chosen, #chooseEnemy").show();
                     
                 } else if (this.id == "fighter-4") {
                     yourFighter.name = "Darth Vadar"
                     yourFighter.id = this.id
                     yourFighter.healthPoints = 325;
                     yourFighter.attackPower = 24;
-                    yourFighter.enemyId = "enemy-4"
+                    yourFighter.enemyId = "enemies4"
                     yourFighter.viewPoints = 'player4points'
                     $("#fighter-1,#fighter-2,#fighter-3, #choose").hide();
-                    $("#enemy-1,#enemy-2,#enemy-3, #chosen, #chooseEnemy").show();
+                    $("#enemies1, #enemies2, #enemies3, #chosen, #chooseEnemy").show();
                     
                 }
                 enemiesLeft = enemiesArray.filter(word => word != yourFighter.enemyId);
@@ -210,49 +214,49 @@
 
             }).click(function () {
               
-                if (yourFighter.name && this.id == "enemy-1") {
+                if (yourFighter.name && this.id == "enemies1") {
                    
                     enemy.name = "Obi"
                     enemy.id = this.id
                     enemy.healthPoints = 200;
                     enemy.counterAttackPower = 16;
                     enemy.viewPoints = 'enemy1points'
-                    $("#enemy-2,#enemy-3,#enemy-4, #chooseEnemy").hide();
+                    $("#enemies2,#enemies3,#enemies4, #chooseEnemy").hide();
                     // enemiesLeft = enemiesArray.filter(word => word != this.id);
                     // console.log(enemiesLeft)
                     $(".btn-danger, #vs").show();
                     
-                } else if (yourFighter.name && this.id == "enemy-2") {
+                } else if (yourFighter.name && this.id == "enemies2") {
                    
                     enemy.name = "Darth Maul"
                     enemy.id = this.id
                     enemy.healthPoints = 175;
                     enemy.counterAttackPower = 20;
                     enemy.viewPoints = 'enemy2points'
-                    $("#enemy-1,#enemy-3,#enemy-4, #chooseEnemy").hide();
+                    $("#enemies1,#enemies3,#enemies4, #chooseEnemy").hide();
                     // enemiesLeft = enemiesArray.filter(word => word != this.id);
                     // console.log(enemiesLeft)
                     $(".btn-danger, #vs").show();
                     
-                } else if (yourFighter.name && this.id == "enemy-3") {
+                } else if (yourFighter.name && this.id == "enemies3") {
                     enemy.name = "Han Solo"
                     enemy.id = this.id
                     enemy.healthPoints = 300;
                     enemy.counterAttackPower = 25;
                     enemy.viewPoints = 'enemy3points'
-                    $("#enemy-1,#enemy-2,#enemy-4, #chooseEnemy").hide();
+                    $("#enemies1,#enemies2,#enemies4, #chooseEnemy").hide();
                     // enemiesLeft = enemiesArray.filter(word => word != this.id);
                     // console.log(enemiesLeft)
                     $(".btn-danger, #vs").show();
                   
-                } else if (yourFighter.name && this.id == "enemy-4") {
+                } else if (yourFighter.name && this.id == "enemies4") {
                    
                     enemy.name = "Darth Vadar"
                     enemy.id = this.id
                     enemy.healthPoints = 275;
                     enemy.counterAttackPower = 18;
                     enemy.viewPoints = 'enemy4points'
-                    $("#enemy-1,#enemy-2,#enemy-3, #chooseEnemy").hide();
+                    $("#enemies1,#enemies2,#enemies3, #chooseEnemy").hide();
                     // enemiesLeft = enemiesArray.filter(word => word != this.id);
                     // console.log(enemiesLeft)
                     $(".btn-danger, #vs").show();
@@ -262,7 +266,7 @@
                 $("#"+enemy.viewPoints).text("HEALTH POINTS " + enemy.healthPoints);
                 console.log(enemiesLeft)
                 
-            });
+            });     
 
             function attack() {
                 yourFighter.healthPoints -= enemy.counterAttackPower
@@ -282,8 +286,11 @@
                     
                     $(newEnemyString).show()
                     $("#"+enemy.id).hide()
+                    $("#chooseEnemy").show()
+                    $("#vs").hide()
                     enemiesArray.splice(enemiesArray.indexOf(enemy.id), 1)
                     console.log(enemiesArray)
+
                     if (enemiesLeft.length === 0) {
                         alert("game over")
                     }
