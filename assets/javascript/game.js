@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
     function initialize() {
         yourFighter = {
             name: [],
@@ -150,7 +150,7 @@ $(document).ready(function () {
             $(newEnemyString).show()
             $("#" + enemy.id).hide()
             $("#chooseEnemy").show()
-            $("#vs").hide()
+            $(".btn-danger, #vs").hide();
             enemiesArray.splice(enemiesArray.indexOf(enemy.id), 1)
             console.log(enemiesArray)
 
