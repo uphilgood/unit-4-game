@@ -22,7 +22,9 @@ $(document).ready(function () {
         enemyChosen = false;
         $("#fighter-1, #fighter-2, #fighter-3, #fighter-4").show();
         $("#enemies1, #enemies2, #enemies3, #enemies4, #chosen, #chooseEnemy, #vs").hide();
+        $("#player1points, #player2points, #player3points, #player4points, #enemy1points, #enemy2points, #enemy3points, #enemy4points").hide();
         $(".btn-danger").hide();
+        
     }
 
     initialize();
@@ -72,6 +74,7 @@ $(document).ready(function () {
 
         }
         enemiesLeft = enemiesArray.filter(word => word != yourFighter.enemyId);
+        $("#" + yourFighter.viewPoints).show();
         $("#" + yourFighter.viewPoints).text("HEALTH POINTS " + yourFighter.healthPoints);
         console.log(enemiesLeft)
         console.log(yourFighter)
@@ -128,6 +131,7 @@ $(document).ready(function () {
 
         }
         enemiesLeft = enemiesLeft.filter(word => word != this.id);
+        $("#" + enemy.viewPoints).show();
         $("#" + enemy.viewPoints).text("HEALTH POINTS " + enemy.healthPoints);
         console.log(enemiesLeft)
 
