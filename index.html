@@ -11,124 +11,127 @@
 
     <!-- Added a link to Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
 
-<body>
-
-    <div class="jumbotron">
-        <h1 class="text-center">Starwars Game</h1>
+<body background="./assets/images/sw.jpg">
 
 
-        <div class="container">
-            <div id="choose">
-                <h1 style="text-align: center">Choose Your Fighter!</h1>
-            </div>
+    <h1 class="text-center" style="color: white">Starwars Game</h1>
 
-            <div id="chosen">
-                <h1 style="text-align: center">Your Fighter</h1>
-            </div>
 
-            <div class="row">
+    <div class="container">
+        <div id="choose">
+            <h1 style="color: white;" align="center">Choose Your Fighter!</h1>
+        </div>
+        <br/>
 
-                <!-- Select Fighter Panel -->
-                <div id="fighter-1" class="card" style="width: 16rem;">
-                    <img class="card-img-top" src="./assets/images/obi.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Obi Wan Kenobi</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-                        <div id="player1points"></div>
-
-                    </div>
-                </div>
-                <br/>
-                <div id="fighter-2" class="card" style="width: 16rem;">
-                    <img class="card-img-top" src="./assets/images/darth_maul.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Darth Maul</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <div id="player2points"></div>
-                    </div>
-                </div>
-                <br/>
-                <div id="fighter-3" class="card" style="width: 16rem;">
-                    <img class="card-img-top" src="./assets/images/solo.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Han Solo</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <div id="player3points"></div>
-                    </div>
-                </div>
-                <br/>
-                <div id="fighter-4" class="card" style="width: 16rem;">
-                    <img class="card-img-top" src="./assets/images/darth_vadar.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Darth Vader</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <div id="player4points"></div>
-                    </div>
-                </div>
-                <br/>
-            </div>
+        <div id="chosen">
+            <h1 style="color: white;" align="center">Your Fighter</h1>
         </div>
 
+        <div class="row text-center">
+
+            <!-- Select Fighter Panel -->
+            <div id="fighter-1" class="card text-white bg-dark mb-3" style="width: 16rem;">
+                <img class="card-img-top" src="./assets/images/obi.jpg" alt="Card image cap">
+                <div class="card-body text-white bg-dark mb-3">
+                    <h5 class="card-title text-white bg-dark mb-3">Obi Wan Kenobi</h5>
 
 
+                    <div id="player1points"></div>
+
+                </div>
+            </div>
+            <br/>
+            <div id="fighter-2" class="card text-white bg-dark mb-3" style="width: 16rem;">
+                <img class="card-img-top" src="./assets/images/darth_maul.png" alt="Card image cap">
+                <div class="card-body text-white bg-dark mb-3">
+                    <h5 class="card-title text-white bg-dark mb-3">Darth Maul</h5>
+
+                    <div id="player2points"></div>
+                </div>
+            </div>
+            <br/>
+            <div id="fighter-3" class="card text-white bg-dark mb-3" style="width: 16rem;">
+                <img class="card-img-top" src="./assets/images/solo.jpg" alt="Card image cap">
+                <div class="card-body text-white bg-dark mb-3">
+                    <h5 class="card-title text-white bg-dark mb-3">Han Solo</h5>
+
+                    <div id="player3points"></div>
+                </div>
+            </div>
+            <br/>
+            <div id="fighter-4" class="card text-white bg-dark mb-3" style="width: 16rem;">
+                <img class="card-img-top" src="./assets/images/darth_vadar.jpg" alt="Card image cap">
+                <div class="card-body text-white bg-dark mb-3">
+                    <h5 class="card-title text-white bg-dark mb-3">Darth Vader</h5>
+
+                    <div id="player4points"></div>
+                </div>
+            </div>
+            <br/>
+        </div>
     </div>
+
+
+
+
 
     <div id="chooseEnemy">
-        <h1 style="text-align: center">Choose your Opponent!</h1>
+        <h1 style="color: white;" align="center">Choose your Opponent!</h1>
     </div>
     <div id="vs">
-        <h1 style="text-align: center">VS.</h1>
+        <h1 style="color: white;" align="center">VS.</h1>
     </div>
-    <div>
-        <button type="button" class="btn btn-danger">Attack!</button>
+    <div class="col-6 text-center"> >
+        <button type="button" class="btn btn-danger btn-lg col-4">Attack!</button>
     </div>
 
-    <div class="jumbotron">
-        <div class="container">
-            <div class="row">
-                <div id="enemies1" class="card" style="width: 16rem;">
-                    <img class="card-img-top" src="./assets/images/obi.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Obi Wan Kenobi</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <div id="enemy1points"></div>
-                    </div>
-                </div>
-                <br/>
-                <div id="enemies2" class="card" style="width: 16rem;">
-                    <img class="card-img-top" src="./assets/images/darth_maul.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Darth Maul</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <div id="enemy2points"></div>
-                    </div>
-                </div>
-                <br/>
-                <div id="enemies3" class="card" style="width: 16rem;">
-                    <img class="card-img-top" src="./assets/images/solo.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Han Solo</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <div id="enemy3points"></div>
-                    </div>
-                </div>
-                <br/>
-                <div id="enemies4" class="card" style="width: 16rem;">
-                    <img class="card-img-top" src="./assets/images/darth_vadar.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Darth Vader</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <div id="enemy4points"></div>
-                    </div>
-                </div>
+    <br/>
+    <br/>
+    <div class="container">
+        <div class="row text-center">
+            <div id="enemies1" class="card text-white bg-dark mb-3" style="width: 16rem;">
+                <img class="card-img-top" src="./assets/images/obi.jpg" alt="Card image cap">
+                <div class="card-body text-white bg-dark mb-3">
+                    <h5 class="card-title text-white bg-dark mb-3">Obi Wan Kenobi</h5>
 
+                    <div id="enemy1points"></div>
+                </div>
             </div>
+            <br/>
+            <div id="enemies2" class="card text-white bg-dark mb-3" style="width: 16rem;">
+                <img class="card-img-top" src="./assets/images/darth_maul.png" alt="Card image cap">
+                <div class="card-body text-white bg-dark mb-3">
+                    <h5 class="card-title text-white bg-dark mb-3">Darth Maul</h5>
+
+                    <div id="enemy2points"></div>
+                </div>
+            </div>
+            <br/>
+            <div id="enemies3" class="card text-white bg-dark mb-3" style="width: 16rem;">
+                <img class="card-img-top" src="./assets/images/solo.jpg" alt="Card image cap">
+                <div class="card-body text-white bg-dark mb-3">
+                    <h5 class="card-title text-white bg-dark mb-3">Han Solo</h5>
+
+                    <div id="enemy3points"></div>
+                </div>
+            </div>
+            <br/>
+            <div id="enemies4" class="cardtext-white bg-dark mb-3" style="width: 16rem;">
+                <img class="card-img-top" src="./assets/images/darth_vadar.jpg" alt="Card image cap">
+                <div class="card-body text-white bg-dark mb-3">
+                    <h5 class="card-title text-white bg-dark mb-3">Darth Vader</h5>
+
+                    <div id="enemy4points"></div>
+                </div>
+            </div>
+
         </div>
     </div>
+
 </body>
 
 </html>

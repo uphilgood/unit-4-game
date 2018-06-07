@@ -76,6 +76,7 @@ $(document).ready(function () {
         enemiesLeft = enemiesArray.filter(word => word != yourFighter.enemyId);
         $("#" + yourFighter.viewPoints).show();
         $("#" + yourFighter.viewPoints).text("HEALTH POINTS " + yourFighter.healthPoints);
+        $("#" + yourFighter.viewPoints).css({ 'font-weight': 'bold' });
         console.log(enemiesLeft)
         console.log(yourFighter)
         // console.log(enemiesLeft)
@@ -125,6 +126,7 @@ $(document).ready(function () {
         enemiesLeft = enemiesLeft.filter(word => word != this.id);
         $("#" + enemy.viewPoints).show();
         $("#" + enemy.viewPoints).text("HEALTH POINTS " + enemy.healthPoints);
+        $("#" + enemy.viewPoints).css({ 'font-weight': 'bold' });
         console.log(enemiesLeft)
 
     });
